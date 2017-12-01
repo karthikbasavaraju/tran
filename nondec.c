@@ -21,19 +21,20 @@ int dp_nondec( int a[], int n )
         count[i] = 0;
     
     int max_count=-1;
-    
     for (int i = 0; i < n; i++ )
     {
-    	int max=-999;
+    	int maxv=-999;
+    	int max = -999;
     	if(i==0)
-    		max=i;
-	else
-	{
-		for (int j = i; j>0; j-- ) 
+    	    max=i;
+	    else
+	    {
+		    for (int j = i; j>0; j-- ) 
         	{
-            		if (a[i]>=a[j-1] && a[max]<a[j-1])
+            		if (a[i]>=a[j-1] && maxv<a[j-1])
             		{
             	      		max=j-1;
+            	      		maxv = a[max];
                		}
     		}
     	}	
